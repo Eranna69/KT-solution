@@ -1,0 +1,4968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Let's Connect | Your Company</title>
+
+<style>
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: #f7f6f2;
+    color: #1d1d1b;
+    line-height: 1.6;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+:root {
+    --dark: #1d1d1b;
+    --dark-soft: #343431;
+    --cream: #f7f6f2;
+    --white: #ffffff;
+    --border: #deddd7;
+    --muted: #77766f;
+    --accent: #a77b38;
+    --accent-dark: #876229;
+    --light-accent: #f1e8d9;
+    --success: #3e7655;
+    --danger: #b33a3a;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    height: 78px;
+    background: rgba(247, 246, 242, 0.96);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+}
+
+.nav-container {
+    width: min(1200px, 92%);
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.nav-cta {
+    border: 1px solid var(--dark);
+    padding: 10px 19px;
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav-cta:hover {
+    background: var(--dark);
+    color: white;
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 25px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 390px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px 60px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border: 1px solid #dedbd2;
+
+    border-radius: 50%;
+
+    left: -230px;
+    top: 20px;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    border: 1px solid #dedbd2;
+
+    border-radius: 50%;
+
+    right: -160px;
+    bottom: -100px;
+}
+
+.hero-content {
+    max-width: 780px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    color: var(--accent);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(44px, 6vw, 70px);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: var(--muted);
+
+    max-width: 590px;
+
+    margin: auto;
+
+    font-size: 16px;
+}
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.contact-section {
+    width: min(1100px, 92%);
+
+    margin: 0 auto 100px;
+}
+
+/* =========================================================
+   FORM SWITCH
+========================================================= */
+
+.form-switch {
+    max-width: 560px;
+
+    margin: 0 auto 55px;
+
+    background: #ebe9e2;
+
+    padding: 6px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    border: 1px solid var(--border);
+}
+
+.switch-btn {
+    border: none;
+
+    background: transparent;
+
+    padding: 17px 20px;
+
+    font-weight: 600;
+
+    color: var(--muted);
+
+    transition: 0.35s ease;
+}
+
+.switch-btn.active {
+    background: var(--dark);
+
+    color: white;
+}
+
+.switch-btn span {
+    display: block;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 3px;
+
+    color: var(--accent);
+}
+
+.switch-btn.active span {
+    color: #d7b77e;
+}
+
+/* =========================================================
+   FORM MODE
+========================================================= */
+
+.form-mode {
+    animation: modeIn 0.45s ease;
+}
+
+@keyframes modeIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+.form-heading {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.form-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 37px;
+
+    font-weight: 400;
+
+    margin-bottom: 8px;
+}
+
+.form-heading p {
+    color: var(--muted);
+}
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-wrapper {
+    margin-bottom: 45px;
+}
+
+.progress {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.progress-item {
+    display: flex;
+
+    align-items: center;
+
+    flex: 1;
+}
+
+.progress-item:last-child {
+    flex: 0;
+}
+
+.progress-circle {
+    min-width: 35px;
+
+    width: 35px;
+
+    height: 35px;
+
+    border: 1px solid #c9c7c0;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 12px;
+
+    background: var(--cream);
+
+    color: var(--muted);
+
+    transition: 0.3s;
+}
+
+.progress-item.active .progress-circle,
+.progress-item.completed .progress-circle {
+
+    background: var(--dark);
+
+    color: white;
+
+    border-color: var(--dark);
+}
+
+.progress-item.active .progress-circle {
+
+    box-shadow: 0 0 0 5px var(--light-accent);
+}
+
+.progress-line {
+
+    height: 1px;
+
+    background: #d4d2cb;
+
+    flex: 1;
+
+    margin: 0 8px;
+}
+
+.progress-item.completed .progress-line {
+
+    background: var(--accent);
+}
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.form-card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    padding: clamp(25px, 5vw, 55px);
+
+    box-shadow: 0 18px 50px rgba(30, 30, 25, 0.05);
+
+    min-height: 430px;
+}
+
+.step {
+
+    display: none;
+
+    animation: stepIn 0.4s ease;
+}
+
+.step.active {
+
+    display: block;
+}
+
+@keyframes stepIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.step-title {
+
+    margin-bottom: 30px;
+}
+
+.step-title .number {
+
+    color: var(--accent);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+}
+
+.step-title h3 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+
+    font-weight: 400;
+
+    margin-top: 4px;
+}
+
+.step-title p {
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.form-group.full {
+
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.required {
+
+    color: var(--accent);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    background: #fcfcfa;
+
+    padding: 14px 15px;
+
+    outline: none;
+
+    color: var(--dark);
+
+    transition: 0.25s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color: var(--accent);
+
+    background: white;
+
+    box-shadow: 0 0 0 3px rgba(167, 123, 56, 0.08);
+}
+
+textarea {
+
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+/* =========================================================
+   CHOICE CARDS
+========================================================= */
+
+.choice-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+.choice {
+
+    position: relative;
+}
+
+.choice input {
+
+    position: absolute;
+
+    opacity: 0;
+}
+
+.choice label {
+
+    display: block;
+
+    border: 1px solid var(--border);
+
+    padding: 17px 15px;
+
+    min-height: 65px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    transition: 0.25s;
+}
+
+.choice input:checked + label {
+
+    border-color: var(--dark);
+
+    background: #f3f0e9;
+}
+
+.choice label:hover {
+
+    border-color: var(--accent);
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.form-actions {
+
+    margin-top: 38px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.btn {
+
+    border: none;
+
+    padding: 14px 27px;
+
+    font-weight: 600;
+
+    font-size: 13px;
+
+    letter-spacing: 0.3px;
+
+    transition: 0.3s;
+}
+
+.btn-primary {
+
+    background: var(--dark);
+
+    color: white;
+}
+
+.btn-primary:hover {
+
+    background: var(--accent-dark);
+}
+
+.btn-secondary {
+
+    background: transparent;
+
+    color: var(--dark);
+
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+
+    border-color: var(--dark);
+}
+
+.btn-small {
+
+    padding: 10px 16px;
+
+    font-size: 12px;
+}
+
+/* =========================================================
+   QUOTATION SELECTED SUMMARY
+========================================================= */
+
+.selection-summary {
+
+    background: #faf9f5;
+
+    border: 1px solid var(--border);
+
+    padding: 24px;
+
+    margin-bottom: 30px;
+}
+
+.selection-summary h4 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 21px;
+
+    font-weight: 400;
+
+    margin-bottom: 17px;
+}
+
+.selection-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid #e5e3dc;
+
+    font-size: 13px;
+}
+
+.selection-row:last-child {
+
+    border-bottom: none;
+}
+
+.selection-row span:first-child {
+
+    color: var(--muted);
+}
+
+.selection-row span:last-child {
+
+    font-weight: 600;
+
+    text-align: right;
+}
+
+/* =========================================================
+   PRICE BREAKDOWN
+========================================================= */
+
+.price-breakdown {
+
+    border: 1px solid var(--border);
+
+    margin-top: 25px;
+
+    margin-bottom: 30px;
+}
+
+.price-breakdown-header {
+
+    padding: 16px 20px;
+
+    background: #f3f1eb;
+
+    border-bottom: 1px solid var(--border);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 20px;
+}
+
+.price-line {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 13px 20px;
+
+    border-bottom: 1px solid #ebe9e3;
+
+    font-size: 13px;
+}
+
+.price-line:last-child {
+
+    border-bottom: none;
+}
+
+.price-line span:last-child {
+
+    font-weight: 600;
+}
+
+.price-total {
+
+    background: #faf8f1;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+.price-total span:last-child {
+
+    color: var(--accent-dark);
+}
+
+/* =========================================================
+   RECOMMENDATIONS
+========================================================= */
+
+.recommendation-intro {
+
+    margin-top: 40px;
+
+    margin-bottom: 20px;
+}
+
+.recommendation-intro h3 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 27px;
+
+    font-weight: 400;
+
+    margin-bottom: 5px;
+}
+
+.recommendation-intro p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    max-width: 720px;
+}
+
+.recommendation-list {
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+}
+
+.recommendation-card {
+
+    border: 1px solid var(--border);
+
+    padding: 22px;
+
+    background: white;
+
+    transition: 0.25s;
+}
+
+.recommendation-card:hover {
+
+    border-color: #c5b28f;
+
+    box-shadow: 0 8px 25px rgba(30, 30, 25, 0.04);
+}
+
+.recommendation-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 15px;
+}
+
+.recommendation-number {
+
+    color: var(--accent);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+
+    margin-bottom: 4px;
+}
+
+.recommendation-card h4 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 22px;
+
+    font-weight: 400;
+}
+
+.recommended-label {
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    background: var(--light-accent);
+
+    color: var(--accent-dark);
+
+    padding: 5px 8px;
+
+    white-space: nowrap;
+}
+
+.recommendation-card > p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin: 10px 0 16px;
+
+    max-width: 800px;
+}
+
+.why-box {
+
+    background: #faf9f5;
+
+    border-left: 2px solid var(--accent);
+
+    padding: 11px 13px;
+
+    margin-bottom: 17px;
+
+    font-size: 12px;
+
+    color: var(--muted);
+}
+
+.why-box strong {
+
+    display: block;
+
+    color: var(--dark);
+
+    margin-bottom: 3px;
+}
+
+.recommendation-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.recommendation-price {
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.recommendation-price span {
+
+    color: var(--accent-dark);
+}
+
+.added {
+
+    background: var(--success) !important;
+
+    color: white !important;
+
+    border-color: var(--success) !important;
+}
+
+/* =========================================================
+   UPDATED ESTIMATE
+========================================================= */
+
+.updated-estimate {
+
+    margin-top: 30px;
+
+    padding: 30px;
+
+    background: var(--dark);
+
+    color: white;
+
+    text-align: center;
+}
+
+.updated-estimate .small-title {
+
+    color: #d7b77e;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.updated-estimate h3 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-weight: 400;
+
+    font-size: 17px;
+
+    margin-top: 5px;
+}
+
+.updated-price {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(32px, 5vw, 48px);
+
+    margin: 7px 0;
+}
+
+.updated-estimate p {
+
+    color: #aaa9a2;
+
+    font-size: 12px;
+}
+
+/* =========================================================
+   ESTIMATE RANGE
+========================================================= */
+
+.estimate-box {
+
+    border: 1px solid var(--accent);
+
+    background: #fbf7ef;
+
+    padding: 35px;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.estimate-label {
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: var(--accent);
+
+    font-weight: 700;
+}
+
+.estimate-price {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+
+    margin: 8px 0;
+}
+
+.estimate-note {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    max-width: 650px;
+
+    margin: auto;
+}
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+.preview-section {
+
+    border-top: 1px solid var(--border);
+
+    padding-top: 25px;
+
+    margin-top: 25px;
+}
+
+.preview-section h4 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 21px;
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+.preview-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    border: 1px solid var(--border);
+}
+
+.preview-item {
+
+    padding: 15px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.preview-item:nth-child(odd) {
+
+    border-right: 1px solid var(--border);
+}
+
+.preview-item small {
+
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    margin-bottom: 3px;
+}
+
+.preview-item strong {
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.preview-full {
+
+    grid-column: 1 / -1;
+
+    border-right: none !important;
+}
+
+.tag-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.tag {
+
+    background: #f1eee6;
+
+    padding: 5px 8px;
+
+    font-size: 11px;
+}
+
+/* =========================================================
+   REVIEW TOTAL
+========================================================= */
+
+.review-total {
+
+    margin-top: 25px;
+
+    background: #faf7ef;
+
+    border: 1px solid var(--accent);
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.review-total span {
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.review-total strong {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 26px;
+
+    font-weight: 400;
+
+    color: var(--accent-dark);
+}
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.success {
+
+    text-align: center;
+
+    padding: 50px 20px;
+}
+
+.success-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    border: 1px solid var(--accent);
+
+    border-radius: 50%;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--accent);
+
+    font-size: 25px;
+}
+
+.success h3 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 35px;
+
+    font-weight: 400;
+}
+
+.reference {
+
+    margin: 20px auto;
+
+    background: #f4f1ea;
+
+    padding: 12px 20px;
+
+    width: fit-content;
+
+    font-size: 13px;
+}
+
+.success p {
+
+    color: var(--muted);
+
+    max-width: 550px;
+
+    margin: 10px auto;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    background: var(--dark);
+
+    color: white;
+
+    padding: 70px 0 25px;
+}
+
+.footer-container {
+
+    width: min(1200px, 92%);
+
+    margin: auto;
+}
+
+.footer-top {
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding-bottom: 55px;
+
+    border-bottom: 1px solid #454541;
+}
+
+.footer-brand h2 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 32px;
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+
+    color: #aaa9a2;
+
+    max-width: 310px;
+
+    font-size: 13px;
+}
+
+.footer-column h4 {
+
+    color: #d8b982;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 17px;
+}
+
+.footer-column a {
+
+    display: block;
+
+    color: #aaa9a2;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    margin-bottom: 9px;
+
+    transition: 0.3s;
+}
+
+.footer-column a:hover {
+
+    color: white;
+}
+
+.footer-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-top: 22px;
+
+    color: #898881;
+
+    font-size: 11px;
+}
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    background: var(--dark);
+
+    color: white;
+
+    padding: 13px 18px;
+
+    font-size: 13px;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    pointer-events: none;
+
+    transition: 0.3s;
+
+    z-index: 5000;
+}
+
+.toast.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .nav-links,
+    .nav-cta {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+        grid-column: auto;
+    }
+
+    .choice-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-top {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 68px;
+    }
+
+    .hero {
+        min-height: 330px;
+
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .form-switch {
+        margin-bottom: 35px;
+    }
+
+    .switch-btn {
+        padding: 13px 8px;
+
+        font-size: 12px;
+    }
+
+    .form-card {
+        padding: 24px 18px;
+    }
+
+    .progress-circle {
+
+        width: 29px;
+
+        min-width: 29px;
+
+        height: 29px;
+
+        font-size: 10px;
+    }
+
+    .progress-line {
+
+        margin: 0 4px;
+    }
+
+    .choice-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .preview-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .preview-item:nth-child(odd) {
+
+        border-right: none;
+    }
+
+    .preview-full {
+
+        grid-column: auto;
+    }
+
+    .form-actions {
+
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+    .btn {
+
+        width: 100%;
+    }
+
+    .recommendation-top {
+
+        flex-direction: column;
+    }
+
+    .recommendation-bottom {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .recommendation-bottom .btn {
+
+        width: 100%;
+    }
+
+    .review-total {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .footer-top {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <div class="logo">
+            KT<span>Solutions</span>
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="#">Home</a></li>
+
+            <li><a href="#">About</a></li>
+
+            <li><a href="#">Services</a></li>
+
+            <li><a href="#">Work</a></li>
+
+            <li><a href="#connect">Contact</a></li>
+
+        </ul>
+
+        <a
+            href="#connect"
+            class="nav-cta"
+        >
+            Start a Conversation
+        </a>
+
+        <div class="mobile-menu">
+            ☰
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            Let's Work Together
+        </div>
+
+        <h1>
+            Let's Connect.
+        </h1>
+
+        <p>
+            Tell us what you're looking for, share your idea,
+            or build your requirements and discover an
+            estimated project range.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<section
+    class="contact-section"
+    id="connect"
+>
+
+
+    <!-- =====================================================
+         TOP SWITCH
+    ====================================================== -->
+
+    <div class="form-switch">
+
+        <button
+            class="switch-btn active"
+            id="getTouchBtn"
+            onclick="switchMode('contact')"
+        >
+
+            <!-- <span>01</span> -->
+
+            GET IN TOUCH
+
+        </button>
+
+
+        <button
+            class="switch-btn"
+            id="quotationBtn"
+            onclick="switchMode('quotation')"
+        >
+
+            <!-- <span>02</span> -->
+
+            QUOTATION
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         GET IN TOUCH
+    ====================================================== -->
+
+    <div
+        id="contactMode"
+        class="form-mode"
+    >
+
+        <div class="form-heading">
+
+            <div class="eyebrow">
+                Start a Conversation
+            </div>
+
+            <h2>
+                Get In Touch
+            </h2>
+
+            <p>
+                Tell us about yourself, your business and what
+                you're looking to achieve.
+            </p>
+
+        </div>
+
+
+        <!-- CONTACT PROGRESS -->
+
+        <div class="progress-wrapper">
+
+            <div class="progress">
+
+                <div
+                    class="progress-item active"
+                    data-contact-progress="1"
+                >
+
+                    <div class="progress-circle">
+                        01
+                    </div>
+
+                    <div class="progress-line"></div>
+
+                </div>
+
+
+                <div
+                    class="progress-item"
+                    data-contact-progress="2"
+                >
+
+                    <div class="progress-circle">
+                        02
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-card">
+
+            <form id="contactForm">
+
+
+                <!-- CONTACT STEP 1 -->
+
+                <div
+                    class="step active"
+                    data-contact-step="1"
+                >
+
+                    <div class="step-title">
+
+                        <div class="number">
+                            STEP 01
+                        </div>
+
+                        <h3>
+                            Your Details
+                        </h3>
+
+                        <p>
+                            Share your basic information and business requirements.
+                        </p>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>
+                                Name
+                            </label>
+                            <input
+                                id="contactName"
+                                type="text"
+                                placeholder="Your name"
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>
+                                Designation
+                            </label>
+                            <input
+                                id="contactDesignation"
+                                type="text"
+                                placeholder="Your designation"
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>
+                                Business Email
+                            </label>
+                            <input
+                                id="contactEmail"
+                                type="email"
+                                placeholder="you@company.com"
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>
+                                City
+                            </label>
+                            <input
+                                id="contactCity"
+                                type="text"
+                                placeholder="Your city"
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>
+                                Phone Number
+                            </label>
+                            <input
+                                id="contactPhone"
+                                type="tel"
+                                placeholder="+91 XXXXX XXXXX"
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>
+                                Business Name <span class="required">*</span>
+                            </label>
+                            <input
+                                id="contactBusinessName"
+                                type="text"
+                                required
+                                placeholder="Your business name"
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>
+                                Business Type <span class="required">*</span>
+                            </label>
+                            <select
+                                id="contactBusinessType"
+                                required
+                            >
+                                <option value="" disabled selected>
+                                    Select business type
+                                </option>
+                                <option>Startup</option>
+                                <option>Small Business</option>
+                                <option>Medium Business</option>
+                                <option>Enterprise</option>
+                                <option>Agency</option>
+                                <option>Freelancer</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>
+                                Budget <span class="required">*</span>
+                            </label>
+                            <select
+                                id="contactBudget"
+                                required
+                            >
+                                <option value="" disabled selected>
+                                    Select budget
+                                </option>
+                                <option>₹25K – ₹50K</option>
+                                <option>₹50K – ₹1L</option>
+                                <option>₹1L – ₹3L</option>
+                                <option>₹3L – ₹5L</option>
+                                <option>₹5L+</option>
+                                <option>Not Decided</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group full">
+                            <label>
+                                Message
+                            </label>
+                            <textarea
+                                id="contactMessage"
+                                placeholder="Tell us about your requirement..."
+                            ></textarea>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <span></span>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="nextContactStep()"
+                        >
+                            Review →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT STEP 2 -->
+
+                <div
+                    class="step"
+                    data-contact-step="2"
+                >
+
+                    <div class="step-title">
+
+                        <div class="number">
+                            STEP 02
+                        </div>
+
+                        <h3>
+                            Review Your Enquiry
+                        </h3>
+
+                        <p>
+                            Please check your information before submitting.
+                        </p>
+
+                    </div>
+
+
+                    <div class="preview-section">
+
+                        <h4>
+                            Contact Information
+                        </h4>
+
+                        <div class="preview-grid">
+
+                            <div class="preview-item">
+                                <small>Name</small>
+                                <strong id="previewContactName">—</strong>
+                            </div>
+
+                            <div class="preview-item">
+                                <small>Designation</small>
+                                <strong id="previewContactDesignation">—</strong>
+                            </div>
+
+                            <div class="preview-item">
+                                <small>Business Email</small>
+                                <strong id="previewContactEmail">—</strong>
+                            </div>
+
+                            <div class="preview-item">
+                                <small>City</small>
+                                <strong id="previewContactCity">—</strong>
+                            </div>
+
+                            <div class="preview-item">
+                                <small>Phone Number</small>
+                                <strong id="previewContactPhone">—</strong>
+                            </div>
+
+                            <div class="preview-item">
+                                <small>Business Name</small>
+                                <strong id="previewContactBusinessName">—</strong>
+                            </div>
+
+                            <div class="preview-item">
+                                <small>Business Type</small>
+                                <strong id="previewContactBusinessType">—</strong>
+                            </div>
+
+                            <div class="preview-item">
+                                <small>Budget</small>
+                                <strong id="previewContactBudget">—</strong>
+                            </div>
+
+                            <div class="preview-item preview-full">
+                                <small>Message</small>
+                                <strong id="previewContactMessage">—</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            onclick="prevContactStep()"
+                        >
+                            ← Edit Details
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="submitContact()"
+                        >
+                            Submit Enquiry →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT SUCCESS -->
+
+                <div
+                    class="step"
+                    id="contactSuccess"
+                >
+
+                    <div class="success">
+
+                        <div class="success-icon">
+                            ✓
+                        </div>
+
+                        <h3>
+                            Request Received
+                        </h3>
+
+                        <p>
+                            Thank you for sharing your requirements.
+                            Our team will review your enquiry and
+                            get back to you shortly.
+                        </p>
+
+                        <div class="reference">
+
+                            Reference ID:
+                            <strong>
+                                GT-2026-00124
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         QUOTATION MODE
+    ====================================================== -->
+
+    <div
+        id="quotationMode"
+        class="form-mode"
+        style="display:none;"
+    >
+
+        <div class="form-heading">
+
+            <div class="eyebrow">
+                Build Your Estimate
+            </div>
+
+            <h2>
+                Get a Quotation
+            </h2>
+
+            <p>
+                Select your requirements and we'll prepare
+                an indicative project estimate.
+            </p>
+
+        </div>
+
+
+        <!-- QUOTATION PROGRESS -->
+
+        <div class="progress-wrapper">
+
+            <div class="progress">
+
+                <div
+                    class="progress-item active"
+                    data-quote-progress="1"
+                >
+
+                    <div class="progress-circle">
+                        01
+                    </div>
+
+                    <div class="progress-line"></div>
+
+                </div>
+
+
+                <div
+                    class="progress-item"
+                    data-quote-progress="2"
+                >
+
+                    <div class="progress-circle">
+                        02
+                    </div>
+
+                    <div class="progress-line"></div>
+
+                </div>
+
+
+                <div
+                    class="progress-item"
+                    data-quote-progress="3"
+                >
+
+                    <div class="progress-circle">
+                        03
+                    </div>
+
+                    <div class="progress-line"></div>
+
+                </div>
+
+
+                <div
+                    class="progress-item"
+                    data-quote-progress="4"
+                >
+
+                    <div class="progress-circle">
+                        04
+                    </div>
+
+                    <div class="progress-line"></div>
+
+                </div>
+
+
+                <div
+                    class="progress-item"
+                    data-quote-progress="5"
+                >
+
+                    <div class="progress-circle">
+                        05
+                    </div>
+
+                    <div class="progress-line"></div>
+
+                </div>
+
+
+                <div
+                    class="progress-item"
+                    data-quote-progress="6"
+                >
+
+                    <div class="progress-circle">
+                        06
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-card">
+
+            <form id="quotationForm">
+
+
+                <!-- =================================================
+                     QUOTE STEP 1
+                ================================================== -->
+
+                <div
+                    class="step active"
+                    data-quote-step="1"
+                >
+
+                    <div class="step-title">
+
+                        <div class="number">
+                            STEP 01
+                        </div>
+
+                        <h3>
+                            What do you need?
+                        </h3>
+
+                        <p>
+                            Start by selecting the service you are looking for.
+                        </p>
+
+                    </div>
+
+
+                    <div class="choice-grid">
+
+                        <div class="choice">
+
+                            <input
+                                type="radio"
+                                name="service"
+                                value="Website Development"
+                                data-base="40000"
+                                id="q1"
+                            >
+
+                            <label for="q1">
+                                Website Development
+                            </label>
+
+                        </div>
+
+
+                        <div class="choice">
+
+                            <input
+                                type="radio"
+                                name="service"
+                                value="Web Application"
+                                data-base="70000"
+                                id="q2"
+                            >
+
+                            <label for="q2">
+                                Web Application
+                            </label>
+
+                        </div>
+
+
+                        <div class="choice">
+
+                            <input
+                                type="radio"
+                                name="service"
+                                value="Mobile Application"
+                                data-base="80000"
+                                id="q3"
+                            >
+
+                            <label for="q3">
+                                Mobile Application
+                            </label>
+
+                        </div>
+
+
+                        <div class="choice">
+
+                            <input
+                                type="radio"
+                                name="service"
+                                value="UI / UX Design"
+                                data-base="30000"
+                                id="q4"
+                            >
+
+                            <label for="q4">
+                                UI / UX Design
+                            </label>
+
+                        </div>
+
+
+                        <div class="choice">
+
+                            <input
+                                type="radio"
+                                name="service"
+                                value="E-commerce"
+                                data-base="60000"
+                                id="q5"
+                            >
+
+                            <label for="q5">
+                                E-commerce
+                            </label>
+
+                        </div>
+
+
+                        <div class="choice">
+
+                            <input
+                                type="radio"
+                                name="service"
+                                value="Maintenance & Support"
+                                data-base="25000"
+                                id="q6"
+                            >
+
+                            <label for="q6">
+                                Maintenance & Support
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <span></span>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="nextQuoteStep()"
+                        >
+                            Continue →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     QUOTE STEP 2
+                ================================================== -->
+
+                <div
+                    class="step"
+                    data-quote-step="2"
+                >
+
+                    <div class="step-title">
+
+                        <div class="number">
+                            STEP 02
+                        </div>
+
+                        <h3>
+                            Define the Scope
+                        </h3>
+
+                        <p>
+                            Give us an idea of the size of your project.
+                        </p>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>
+                                Number of Pages / Screens
+                            </label>
+
+                            <select id="pages">
+
+                                <option value="" disabled selected>
+                                    Select
+                                </option>
+
+                                <option value="10000">
+                                    Up to 5
+                                </option>
+
+                                <option value="20000">
+                                    6 – 10
+                                </option>
+
+                                <option value="35000">
+                                    11 – 20
+                                </option>
+
+                                <option value="50000">
+                                    20+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Project Complexity
+                            </label>
+
+                            <select id="complexity">
+
+                                <option value="" disabled selected>
+                                    Select
+                                </option>
+
+                                <option value="0">
+                                    Basic
+                                </option>
+
+                                <option value="15000">
+                                    Medium
+                                </option>
+
+                                <option value="30000">
+                                    Advanced
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Current Solution
+                            </label>
+
+                            <select id="currentSolution">
+
+                                <option value="" disabled selected>
+                                    Select current solution
+                                </option>
+
+                                <option>
+                                    New Project
+                                </option>
+
+                                <option>
+                                    Existing Website
+                                </option>
+
+                                <option>
+                                    Existing Application
+                                </option>
+
+                                <option>
+                                    Rebuild / Redesign
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Need Design?
+                            </label>
+
+                            <select id="designNeeded">
+
+                                <option value="" disabled selected>
+                                    Select design requirement
+                                </option>
+
+                                <option>
+                                    Yes — New Design
+                                </option>
+
+                                <option>
+                                    I Already Have Design
+                                </option>
+
+                                <option>
+                                    Need UI/UX Consultation
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label>
+                                Tell us about the project
+                            </label>
+
+                            <textarea
+                                id="projectDescription"
+                                placeholder="Briefly describe what you want to build..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            onclick="prevQuoteStep()"
+                        >
+                            ← Back
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="nextQuoteStep()"
+                        >
+                            Continue →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     QUOTE STEP 3
+                ================================================== -->
+
+                <div
+                    class="step"
+                    data-quote-step="3"
+                >
+
+                    <div class="step-title">
+
+                        <div class="number">
+                            STEP 03
+                        </div>
+
+                        <h3>
+                            Select Features
+                        </h3>
+
+                        <p>
+                            Choose the functionality your project needs.
+                        </p>
+
+                    </div>
+
+
+                    <div class="choice-grid">
+
+                        <div class="choice">
+
+                            <input
+                                type="checkbox"
+                                class="feature"
+                                value="10000"
+                                data-name="User Login"
+                                id="f1"
+                            >
+
+                            <label for="f1">
+                                User Login
+                            </label>
+
+                        </div>
+
+
+                        <div class="choice">
+
+                            <input
+                                type="checkbox"
+                                class="feature"
+                                value="15000"
+                                data-name="Admin Panel"
+                                id="f2"
+                            >
+
+                            <label for="f2">
+                                Admin Panel
+                            </label>
+
+                        </div>
+
+
+                        <div class="choice">
+
+                            <input
+                                type="checkbox"
+                                class="feature"
+                                value="10000"
+                                data-name="Payment Gateway"
+                                id="f3"
+                            >
+
+                            <label for="f3">
+                                Payment Gateway
+                            </label>
+
+                        </div>
+
+
+                        <div class="choice">
+
+                            <input
+                                type="checkbox"
+                                class="feature"
+                                value="8000"
+                                data-name="Search"
+                                id="f4"
+                            >
+
+                            <label for="f4">
+                                Search
+                            </label>
+
+                        </div>
+
+
+                        <div class="choice">
+
+                            <input
+                                type="checkbox"
+                                class="feature"
+                                value="7000"
+                                data-name="Blog / CMS"
+                                id="f5"
+                            >
+
+                            <label for="f5">
+                                Blog / CMS
+                            </label>
+
+                        </div>
+
+
+                        <div class="choice">
+
+                            <input
+                                type="checkbox"
+                                class="feature"
+                                value="12000"
+                                data-name="API Integration"
+                                id="f6"
+                            >
+
+                            <label for="f6">
+                                API Integration
+                            </label>
+
+                        </div>
+
+
+                        <div class="choice">
+
+                            <input
+                                type="checkbox"
+                                class="feature"
+                                value="7500"
+                                data-name="Analytics"
+                                id="f7"
+                            >
+
+                            <label for="f7">
+                                Analytics
+                            </label>
+
+                        </div>
+
+
+                        <div class="choice">
+
+                            <input
+                                type="checkbox"
+                                class="feature"
+                                value="8000"
+                                data-name="SEO Setup"
+                                id="f8"
+                            >
+
+                            <label for="f8">
+                                SEO Setup
+                            </label>
+
+                        </div>
+
+
+                        <div class="choice">
+
+                            <input
+                                type="checkbox"
+                                class="feature"
+                                value="6000"
+                                data-name="WhatsApp Integration"
+                                id="f9"
+                            >
+
+                            <label for="f9">
+                                WhatsApp Integration
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            onclick="prevQuoteStep()"
+                        >
+                            ← Back
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="nextQuoteStep()"
+                        >
+                            Continue →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     QUOTE STEP 4
+                ================================================== -->
+
+                <div
+                    class="step"
+                    data-quote-step="4"
+                >
+
+                    <div class="step-title">
+
+                        <div class="number">
+                            STEP 04
+                        </div>
+
+                        <h3>
+                            Your Details
+                        </h3>
+
+                        <p>
+                            Tell us who we should send the quotation to.
+                        </p>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>
+                                Full Name
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                id="quoteName"
+                                type="text"
+                                required
+                                placeholder="Your full name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Work Email
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                id="quoteEmail"
+                                type="email"
+                                required
+                                placeholder="you@company.com"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Company
+                            </label>
+
+                            <input
+                                id="quoteCompany"
+                                type="text"
+                                placeholder="Company name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Phone
+                            </label>
+
+                            <input
+                                id="quotePhone"
+                                type="tel"
+                                placeholder="+91 XXXXX XXXXX"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Expected Timeline
+                            </label>
+
+                            <select id="quoteTimeline">
+
+                                <option value="" disabled selected>
+                                    Select timeline
+                                </option>
+
+                                <option>
+                                    Flexible
+                                </option>
+
+                                <option>
+                                    ASAP
+                                </option>
+
+                                <option>
+                                    Within 1 Month
+                                </option>
+
+                                <option>
+                                    1 – 3 Months
+                                </option>
+
+                                <option>
+                                    3 – 6 Months
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Your Budget
+                            </label>
+
+                            <select id="quoteBudget">
+
+                                <option value="" disabled selected>
+                                    Select budget
+                                </option>
+
+                                <option>
+                                    Not Decided
+                                </option>
+
+                                <option>
+                                    ₹25K – ₹50K
+                                </option>
+
+                                <option>
+                                    ₹50K – ₹1L
+                                </option>
+
+                                <option>
+                                    ₹1L – ₹3L
+                                </option>
+
+                                <option>
+                                    ₹3L+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            onclick="prevQuoteStep()"
+                        >
+                            ← Back
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="goToEstimate()"
+                        >
+                            Calculate Estimate →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     QUOTE STEP 5 — ESTIMATE
+                ================================================== -->
+
+                <div
+                    class="step"
+                    data-quote-step="5"
+                >
+
+                    <div class="step-title">
+
+                        <div class="number">
+                            STEP 05
+                        </div>
+
+                        <h3>
+                            Your Project Estimate
+                        </h3>
+
+                        <p>
+                            Here's what we've understood from your selections.
+                        </p>
+
+                    </div>
+
+
+                    <!-- SELECTED REQUIREMENTS -->
+
+                    <div class="selection-summary">
+
+                        <h4>
+                            Your Selected Requirements
+                        </h4>
+
+
+                        <div class="selection-row">
+
+                            <span>
+                                Service
+                            </span>
+
+                            <span id="estimateService">
+                                —
+                            </span>
+
+                        </div>
+
+
+                        <div class="selection-row">
+
+                            <span>
+                                Scope
+                            </span>
+
+                            <span id="estimateScope">
+                                —
+                            </span>
+
+                        </div>
+
+
+                        <div class="selection-row">
+
+                            <span>
+                                Complexity
+                            </span>
+
+                            <span id="estimateComplexity">
+                                —
+                            </span>
+
+                        </div>
+
+
+                        <div class="selection-row">
+
+                            <span>
+                                Current Solution
+                            </span>
+
+                            <span id="estimateCurrentSolution">
+                                —
+                            </span>
+
+                        </div>
+
+
+                        <div class="selection-row">
+
+                            <span>
+                                Selected Features
+                            </span>
+
+                            <span id="estimateFeatures">
+                                —
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PRICE BREAKDOWN -->
+
+                    <div class="price-breakdown">
+
+                        <div class="price-breakdown-header">
+                            Current Price Breakdown
+                        </div>
+
+
+                        <div class="price-line">
+
+                            <span>
+                                Base Service
+                            </span>
+
+                            <span id="basePriceDisplay">
+                                ₹0
+                            </span>
+
+                        </div>
+
+
+                        <div class="price-line">
+
+                            <span>
+                                Scope
+                            </span>
+
+                            <span id="scopePriceDisplay">
+                                ₹0
+                            </span>
+
+                        </div>
+
+
+                        <div class="price-line">
+
+                            <span>
+                                Complexity
+                            </span>
+
+                            <span id="complexityPriceDisplay">
+                                ₹0
+                            </span>
+
+                        </div>
+
+
+                        <div class="price-line">
+
+                            <span>
+                                Selected Features
+                            </span>
+
+                            <span id="featuresPriceDisplay">
+                                ₹0
+                            </span>
+
+                        </div>
+
+
+                        <div class="price-line price-total">
+
+                            <span>
+                                Current Estimate
+                            </span>
+
+                            <span id="currentEstimateDisplay">
+                                ₹0
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ESTIMATE -->
+
+                    <div class="estimate-box">
+
+                        <div class="estimate-label">
+                            Estimated Project Range
+                        </div>
+
+                        <div
+                            class="estimate-price"
+                            id="estimatePrice"
+                        >
+                            ₹0 – ₹0
+                        </div>
+
+                        <p class="estimate-note">
+
+                            This is an indicative estimate based on
+                            the selected requirements. Final pricing
+                            may vary after detailed requirement analysis.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         OUR RECOMMENDATIONS
+                    ================================================== -->
+
+                    <div class="recommendation-intro">
+
+                        <h3>
+                            Our Recommendations
+                        </h3>
+
+                        <p>
+
+                            Based on the requirements you've selected,
+                            our team has identified a few additional
+                            features that could make your solution more
+                            useful, scalable and effective.
+
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="recommendation-list"
+                        id="recommendationList"
+                    >
+
+                        <!-- JavaScript inserts recommendations here -->
+
+                    </div>
+
+
+                    <!-- UPDATED ESTIMATE -->
+
+                    <div
+                        class="updated-estimate"
+                        id="updatedEstimateBox"
+                    >
+
+                        <div class="small-title">
+                            Updated Project Estimate
+                        </div>
+
+                        <h3>
+                            With Your Selected Recommendations
+                        </h3>
+
+                        <div
+                            class="updated-price"
+                            id="updatedEstimatePrice"
+                        >
+                            ₹0 – ₹0
+                        </div>
+
+                        <p>
+                            Add or remove our recommendations above
+                            to see how your estimated project budget changes.
+                        </p>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            onclick="prevQuoteStep()"
+                        >
+                            ← Edit Requirements
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="goToQuoteReview()"
+                        >
+                            Review Request →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     QUOTE STEP 6 — COMPLETE PREVIEW
+                ================================================== -->
+
+                <div
+                    class="step"
+                    data-quote-step="6"
+                >
+
+                    <div class="step-title">
+
+                        <div class="number">
+                            STEP 06
+                        </div>
+
+                        <h3>
+                            Review Your Request
+                        </h3>
+
+                        <p>
+                            Please review everything before submitting.
+                        </p>
+
+                    </div>
+
+
+                    <!-- CLIENT -->
+
+                    <div class="preview-section">
+
+                        <h4>
+                            Client Information
+                        </h4>
+
+                        <div class="preview-grid">
+
+                            <div class="preview-item">
+
+                                <small>
+                                    Full Name
+                                </small>
+
+                                <strong id="reviewName">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="preview-item">
+
+                                <small>
+                                    Email
+                                </small>
+
+                                <strong id="reviewEmail">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="preview-item">
+
+                                <small>
+                                    Company
+                                </small>
+
+                                <strong id="reviewCompany">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="preview-item">
+
+                                <small>
+                                    Phone
+                                </small>
+
+                                <strong id="reviewPhone">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROJECT -->
+
+                    <div class="preview-section">
+
+                        <h4>
+                            Project Details
+                        </h4>
+
+                        <div class="preview-grid">
+
+                            <div class="preview-item">
+
+                                <small>
+                                    Service
+                                </small>
+
+                                <strong id="reviewService">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="preview-item">
+
+                                <small>
+                                    Scope
+                                </small>
+
+                                <strong id="reviewScope">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="preview-item">
+
+                                <small>
+                                    Complexity
+                                </small>
+
+                                <strong id="reviewComplexity">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="preview-item">
+
+                                <small>
+                                    Timeline
+                                </small>
+
+                                <strong id="reviewTimeline">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="preview-item">
+
+                                <small>
+                                    Client Budget
+                                </small>
+
+                                <strong id="reviewBudget">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="preview-item">
+
+                                <small>
+                                    Design
+                                </small>
+
+                                <strong id="reviewDesign">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="preview-item preview-full">
+
+                                <small>
+                                    Project Description
+                                </small>
+
+                                <strong id="reviewDescription">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SELECTED FEATURES -->
+
+                    <div class="preview-section">
+
+                        <h4>
+                            Selected Features
+                        </h4>
+
+                        <div
+                            class="tag-list"
+                            id="reviewFeatures"
+                        >
+                            <span class="tag">
+                                None selected
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- OUR RECOMMENDATIONS -->
+
+                    <div class="preview-section">
+
+                        <h4>
+                            Recommendations From Our Team
+                        </h4>
+
+                        <div
+                            class="tag-list"
+                            id="reviewRecommendations"
+                        >
+                            <span class="tag">
+                                None added
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- FINAL TOTAL -->
+
+                    <div class="review-total">
+
+                        <div>
+
+                            <span>
+                                Final Estimated Project Range
+                            </span>
+
+                            <br>
+
+                            <strong id="reviewEstimate">
+                                ₹0 – ₹0
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Estimate Type
+                            </span>
+
+                            <br>
+
+                            <strong style="
+                                font-family: inherit;
+                                font-size: 13px;
+                                color: var(--dark);
+                            ">
+                                Indicative
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <p style="
+                        color: var(--muted);
+                        font-size: 11px;
+                        margin-top: 15px;
+                    ">
+
+                        This estimate is based on the information
+                        currently provided and may change after
+                        detailed requirement analysis.
+
+                    </p>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            onclick="prevQuoteStep()"
+                        >
+                            ← Edit Details
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="submitQuotation()"
+                        >
+                            Submit Quotation Request →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     QUOTE SUCCESS
+                ================================================== -->
+
+                <div
+                    class="step"
+                    id="quoteSuccess"
+                >
+
+                    <div class="success">
+
+                        <div class="success-icon">
+                            ✓
+                        </div>
+
+                        <h3>
+                            Quotation Request Received
+                        </h3>
+
+                        <p>
+
+                            Thank you for sharing your requirements.
+                            Your request has been received successfully.
+
+                            We will review the details and contact you shortly.
+
+                        </p>
+
+                        <div class="reference">
+
+                            Quote ID:
+                            <strong id="successQuoteId">
+                                QT-2026-00124
+                            </strong>
+
+                        </div>
+
+                        <p>
+
+                            A confirmation email will be sent to
+                            the email address provided.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+
+                <h2>
+                    YOUR COMPANY
+                </h2>
+
+                <p>
+
+                    Building thoughtful digital experiences,
+                    meaningful products and solutions for modern
+                    businesses.
+
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Company
+                </h4>
+
+                <a href="#">
+                    About Us
+                </a>
+
+                <a href="#">
+                    Our Work
+                </a>
+
+                <a href="#">
+                    Careers
+                </a>
+
+                <a href="#connect">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Services
+                </h4>
+
+                <a href="#">
+                    Web Development
+                </a>
+
+                <a href="#">
+                    Mobile Applications
+                </a>
+
+                <a href="#">
+                    UI / UX Design
+                </a>
+
+                <a href="#">
+                    E-commerce
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Connect
+                </h4>
+
+                <a href="#">
+                    LinkedIn
+                </a>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    Facebook
+                </a>
+
+                <a href="#">
+                    Email Us
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Your Company. All rights reserved.
+            </span>
+
+            <span>
+                Privacy Policy &nbsp; · &nbsp; Terms
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="toast"
+    id="toast"
+>
+    Added to your quotation.
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   GLOBAL STATE
+========================================================= */
+
+let contactStep = 1;
+let quoteStep = 1;
+
+let selectedRecommendations = [];
+
+let currentQuote = {
+    service: "",
+    basePrice: 0,
+    pages: "",
+    pagesPrice: 0,
+    complexity: "",
+    complexityPrice: 0,
+    currentSolution: "",
+    designNeeded: "",
+    description: "",
+    features: [],
+    featurePrice: 0,
+    name: "",
+    email: "",
+    company: "",
+    phone: "",
+    timeline: "",
+    budget: "",
+    originalTotal: 0,
+    recommendationTotal: 0,
+    finalTotal: 0,
+    estimateMin: 0,
+    estimateMax: 0
+};
+
+/* =========================================================
+   MODE SWITCH
+========================================================= */
+
+function switchMode(mode) {
+    const contactMode = document.getElementById("contactMode");
+    const quotationMode = document.getElementById("quotationMode");
+    const getTouchBtn = document.getElementById("getTouchBtn");
+    const quotationBtn = document.getElementById("quotationBtn");
+
+    if (mode === "contact") {
+        quotationMode.style.display = "none";
+        contactMode.style.display = "block";
+        getTouchBtn.classList.add("active");
+        quotationBtn.classList.remove("active");
+    } else {
+        contactMode.style.display = "none";
+        quotationMode.style.display = "block";
+        quotationBtn.classList.add("active");
+        getTouchBtn.classList.remove("active");
+    }
+}
+
+/* =========================================================
+   KEEP THE FORM POSITION WHEN CHANGING STEPS
+   This prevents the page from jumping upward when Continue
+   or Back is clicked.
+========================================================= */
+
+function preservePagePosition(callback) {
+    const currentY = window.scrollY;
+    callback();
+    requestAnimationFrame(() => {
+        window.scrollTo(0, currentY);
+        requestAnimationFrame(() => window.scrollTo(0, currentY));
+    });
+}
+
+/* =========================================================
+   CONTACT STEPS
+========================================================= */
+
+function showContactStep(step) {
+    document.querySelectorAll("[data-contact-step]").forEach(element => {
+        element.classList.remove("active");
+        if (Number(element.dataset.contactStep) === step) {
+            element.classList.add("active");
+        }
+    });
+
+    document.querySelectorAll("[data-contact-progress]").forEach(element => {
+        const number = Number(element.dataset.contactProgress);
+        element.classList.remove("active", "completed");
+
+        if (number === step) element.classList.add("active");
+        if (number < step) element.classList.add("completed");
+    });
+}
+
+function nextContactStep() {
+    const form = document.getElementById("contactForm");
+
+    if (contactStep === 1) {
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
+        preservePagePosition(() => {
+            contactStep = 2;
+            showContactStep(contactStep);
+
+            document.getElementById("previewContactName").textContent =
+                document.getElementById("contactName").value.trim() || "—";
+            document.getElementById("previewContactDesignation").textContent =
+                document.getElementById("contactDesignation").value.trim() || "—";
+            document.getElementById("previewContactEmail").textContent =
+                document.getElementById("contactEmail").value.trim() || "—";
+            document.getElementById("previewContactCity").textContent =
+                document.getElementById("contactCity").value.trim() || "—";
+            document.getElementById("previewContactPhone").textContent =
+                document.getElementById("contactPhone").value.trim() || "—";
+            document.getElementById("previewContactBusinessName").textContent =
+                document.getElementById("contactBusinessName").value.trim() || "—";
+            document.getElementById("previewContactBusinessType").textContent =
+                document.getElementById("contactBusinessType").value || "—";
+            document.getElementById("previewContactBudget").textContent =
+                document.getElementById("contactBudget").value || "—";
+            document.getElementById("previewContactMessage").textContent =
+                document.getElementById("contactMessage").value.trim() || "—";
+        });
+    }
+}
+
+function prevContactStep() {
+    if (contactStep > 1) {
+        preservePagePosition(() => {
+            contactStep--;
+            showContactStep(contactStep);
+        });
+    }
+}
+
+/* =========================================================
+   CONTACT SUBMISSION
+========================================================= */
+
+function submitContact() {
+    const form = document.getElementById("contactForm");
+
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+
+    document.querySelectorAll("[data-contact-step]").forEach(element => {
+        element.classList.remove("active");
+    });
+
+    document.getElementById("contactSuccess").classList.add("active");
+}
+
+/* =========================================================
+   QUOTATION STEPS
+========================================================= */
+
+function showQuoteStep(step) {
+    document.querySelectorAll("[data-quote-step]").forEach(element => {
+        element.classList.remove("active");
+        if (Number(element.dataset.quoteStep) === step) {
+            element.classList.add("active");
+        }
+    });
+
+    document.querySelectorAll("[data-quote-progress]").forEach(element => {
+        const number = Number(element.dataset.quoteProgress);
+        element.classList.remove("active", "completed");
+
+        if (number === step) element.classList.add("active");
+        if (number < step) element.classList.add("completed");
+    });
+}
+
+function nextQuoteStep() {
+    if (quoteStep === 1) {
+        const service = document.querySelector('input[name="service"]:checked');
+        if (!service) {
+            showToast("Please select a service first.");
+            return;
+        }
+    }
+
+    if (quoteStep === 2) {
+        const pages = document.getElementById("pages");
+        const complexity = document.getElementById("complexity");
+        if (!pages.value) {
+            showToast("Please select the number of pages / screens.");
+            return;
+        }
+        if (!complexity.value) {
+            showToast("Please select the project complexity.");
+            return;
+        }
+        if (!document.getElementById("currentSolution").value) {
+            showToast("Please select the current solution.");
+            return;
+        }
+        if (!document.getElementById("designNeeded").value) {
+            showToast("Please select the design requirement.");
+            return;
+        }
+    }
+
+    if (quoteStep < 6) {
+        preservePagePosition(() => {
+            quoteStep++;
+            showQuoteStep(quoteStep);
+        });
+    }
+}
+
+function prevQuoteStep() {
+    if (quoteStep > 1) {
+        preservePagePosition(() => {
+            quoteStep--;
+            showQuoteStep(quoteStep);
+        });
+    }
+}
+
+/* =========================================================
+   CALCULATE ESTIMATE
+========================================================= */
+
+function calculateEstimate() {
+    const service = document.querySelector('input[name="service"]:checked');
+    if (!service) return false;
+
+    currentQuote.service = service.value;
+    currentQuote.basePrice = Number(service.dataset.base) || 0;
+
+    const pages = document.getElementById("pages");
+    currentQuote.pages = pages.value
+        ? pages.options[pages.selectedIndex].text.trim()
+        : "";
+    currentQuote.pagesPrice = Number(pages.value) || 0;
+
+    const complexity = document.getElementById("complexity");
+    currentQuote.complexity = complexity.value
+        ? complexity.options[complexity.selectedIndex].text.trim()
+        : "";
+    currentQuote.complexityPrice = Number(complexity.value) || 0;
+
+    currentQuote.currentSolution = document.getElementById("currentSolution").value;
+    currentQuote.designNeeded = document.getElementById("designNeeded").value;
+    currentQuote.description = document.getElementById("projectDescription").value.trim();
+
+    currentQuote.features = [];
+    currentQuote.featurePrice = 0;
+
+    document.querySelectorAll(".feature:checked").forEach(feature => {
+        currentQuote.features.push(feature.dataset.name);
+        currentQuote.featurePrice += Number(feature.value) || 0;
+    });
+
+    currentQuote.name = document.getElementById("quoteName").value.trim();
+    currentQuote.email = document.getElementById("quoteEmail").value.trim();
+    currentQuote.company = document.getElementById("quoteCompany").value.trim();
+    currentQuote.phone = document.getElementById("quotePhone").value.trim();
+    currentQuote.timeline = document.getElementById("quoteTimeline").value;
+    currentQuote.budget = document.getElementById("quoteBudget").value;
+
+    currentQuote.originalTotal =
+        currentQuote.basePrice +
+        currentQuote.pagesPrice +
+        currentQuote.complexityPrice +
+        currentQuote.featurePrice;
+
+    currentQuote.recommendationTotal = selectedRecommendations.reduce((total, id) => {
+        const item = recommendationCatalog.find(item => item.id === id);
+        return total + (item ? item.price : 0);
+    }, 0);
+
+    currentQuote.finalTotal =
+        currentQuote.originalTotal + currentQuote.recommendationTotal;
+
+    updateEstimateDisplay();
+    return true;
+}
+
+/* =========================================================
+   ESTIMATE DISPLAY
+========================================================= */
+
+function updateEstimateDisplay() {
+    document.getElementById("estimateService").textContent =
+        currentQuote.service || "—";
+
+    document.getElementById("estimateScope").textContent =
+        currentQuote.pages || "—";
+
+    document.getElementById("estimateComplexity").textContent =
+        currentQuote.complexity || "—";
+
+    document.getElementById("estimateCurrentSolution").textContent =
+        currentQuote.currentSolution || "—";
+
+    document.getElementById("estimateFeatures").textContent =
+        currentQuote.features.length
+            ? currentQuote.features.join(", ")
+            : "No additional features";
+
+    document.getElementById("basePriceDisplay").textContent =
+        formatCurrency(currentQuote.basePrice);
+
+    document.getElementById("scopePriceDisplay").textContent =
+        formatCurrency(currentQuote.pagesPrice);
+
+    document.getElementById("complexityPriceDisplay").textContent =
+        formatCurrency(currentQuote.complexityPrice);
+
+    document.getElementById("featuresPriceDisplay").textContent =
+        formatCurrency(currentQuote.featurePrice);
+
+    document.getElementById("currentEstimateDisplay").textContent =
+        formatCurrency(currentQuote.originalTotal);
+
+    const range = getEstimateRange(currentQuote.finalTotal);
+
+    currentQuote.estimateMin = range.min;
+    currentQuote.estimateMax = range.max;
+
+    document.getElementById("estimatePrice").textContent =
+        formatRange(range.min, range.max);
+
+    document.getElementById("updatedEstimatePrice").textContent =
+        formatRange(range.min, range.max);
+}
+
+/* =========================================================
+   CONTEXTUAL RECOMMENDATION ENGINE
+   Recommendations are provided by the company.
+   They are NOT client-entered.
+========================================================= */
+
+const recommendationCatalog = [
+    {
+        id: "database",
+        title: "Database Integration",
+        price: 15000,
+        services: ["Website Development", "Web Application", "Mobile Application", "E-commerce"],
+        keywords: ["dynamic", "database", "customer", "customers", "product", "products", "order", "orders", "data", "store", "application"],
+        priority: 8
+    },
+    {
+        id: "admin-dashboard",
+        title: "Admin Dashboard",
+        price: 20000,
+        services: ["Website Development", "Web Application", "Mobile Application", "E-commerce"],
+        keywords: ["admin", "dashboard", "manage", "management", "staff", "business"],
+        priority: 8,
+        excludeIf: ["admin"]
+    },
+    {
+        id: "lead-management",
+        title: "Lead Management",
+        price: 12000,
+        services: ["Website Development", "Web Application"],
+        keywords: ["lead", "leads", "enquiry", "inquiry", "contact", "sales", "business"],
+        priority: 9
+    },
+    {
+        id: "analytics",
+        title: "Analytics & Tracking",
+        price: 7500,
+        services: ["Website Development", "Web Application", "Mobile Application", "E-commerce", "Maintenance & Support"],
+        keywords: ["analytics", "report", "reports", "sales", "growth", "traffic", "performance", "dashboard"],
+        priority: 8,
+        excludeIf: ["analytics"]
+    },
+    {
+        id: "seo",
+        title: "Advanced SEO Setup",
+        price: 8000,
+        services: ["Website Development", "E-commerce"],
+        keywords: ["google", "search", "organic", "ranking", "marketing", "traffic", "seo"],
+        priority: 8,
+        excludeIf: ["seo"]
+    },
+    {
+        id: "database-ecommerce",
+        title: "Product Data Management",
+        price: 16000,
+        services: ["E-commerce"],
+        keywords: ["product", "products", "catalog", "store", "shop", "ecommerce", "e-commerce"],
+        priority: 7
+    },
+    {
+        id: "inventory",
+        title: "Inventory Management",
+        price: 20000,
+        services: ["E-commerce", "Web Application"],
+        keywords: ["product", "products", "stock", "inventory", "store", "shop", "ecommerce", "e-commerce"],
+        priority: 10
+    },
+    {
+        id: "orders",
+        title: "Order Management",
+        price: 18000,
+        services: ["E-commerce", "Web Application", "Mobile Application"],
+        keywords: ["order", "orders", "checkout", "payment", "purchase", "shopping", "ecommerce", "e-commerce"],
+        priority: 10
+    },
+    {
+        id: "shipping",
+        title: "Shipping Integration",
+        price: 15000,
+        services: ["E-commerce"],
+        keywords: ["delivery", "shipping", "courier", "order", "ecommerce", "e-commerce"],
+        priority: 9
+    },
+    {
+        id: "customer-accounts",
+        title: "Customer Accounts",
+        price: 12000,
+        services: ["E-commerce", "Web Application", "Mobile Application"],
+        keywords: ["customer", "customers", "account", "profile", "repeat", "user"],
+        priority: 7,
+        excludeIf: ["user-login"]
+    },
+    {
+        id: "order-tracking",
+        title: "Order Tracking",
+        price: 12000,
+        services: ["E-commerce", "Web Application", "Mobile Application"],
+        keywords: ["order", "orders", "delivery", "shipping", "tracking", "purchase"],
+        priority: 8
+    },
+    {
+        id: "notifications",
+        title: "Notifications & Alerts",
+        price: 9000,
+        services: ["Web Application", "Mobile Application", "E-commerce"],
+        keywords: ["notification", "notifications", "alert", "alerts", "order", "booking", "appointment", "status", "customer"],
+        priority: 8
+    },
+    {
+        id: "push-notifications",
+        title: "Push Notifications",
+        price: 10000,
+        services: ["Mobile Application"],
+        keywords: ["notification", "notifications", "alert", "customer", "order", "booking", "message"],
+        priority: 9
+    },
+    {
+        id: "api",
+        title: "API Integration",
+        price: 15000,
+        services: ["Web Application", "Mobile Application", "E-commerce"],
+        keywords: ["api", "integration", "maps", "shipping", "third party", "external"],
+        priority: 9,
+        excludeIf: ["api"]
+    },
+    {
+        id: "security",
+        title: "Security & Access Protection",
+        price: 14000,
+        services: ["Website Development", "Web Application", "Mobile Application", "E-commerce"],
+        keywords: ["login", "payment", "customer", "security", "account", "user", "data"],
+        priority: 8
+    },
+    {
+        id: "role-access",
+        title: "Role-Based Access Control",
+        price: 15000,
+        services: ["Web Application", "Mobile Application", "E-commerce"],
+        keywords: ["admin", "manager", "staff", "employee", "role", "roles", "permission", "permissions"],
+        priority: 8
+    },
+    {
+        id: "booking",
+        title: "Booking & Appointment System",
+        price: 22000,
+        services: ["Website Development", "Web Application", "Mobile Application"],
+        keywords: ["booking", "appointment", "reservation", "doctor", "clinic", "salon", "hotel", "restaurant", "travel", "schedule"],
+        priority: 10
+    },
+    {
+        id: "cms",
+        title: "Content Management System",
+        price: 15000,
+        services: ["Website Development"],
+        keywords: ["content", "blog", "blogs", "pages", "update", "static", "website", "news"],
+        priority: 9,
+        excludeIf: ["blog"]
+    },
+    {
+        id: "whatsapp",
+        title: "WhatsApp Customer Integration",
+        price: 6000,
+        services: ["Website Development", "E-commerce", "Web Application"],
+        keywords: ["whatsapp", "customer", "contact", "lead", "enquiry", "support", "sales"],
+        priority: 7,
+        excludeIf: ["whatsapp"]
+    },
+    {
+        id: "monitoring",
+        title: "Application Monitoring",
+        price: 8000,
+        services: ["Web Application", "Mobile Application", "E-commerce", "Maintenance & Support"],
+        keywords: ["monitor", "monitoring", "production", "live", "performance", "support"],
+        priority: 8
+    },
+    {
+        id: "backup",
+        title: "Automated Backups",
+        price: 7000,
+        services: ["Web Application", "E-commerce", "Maintenance & Support"],
+        keywords: ["backup", "data", "database", "maintenance", "production", "live"],
+        priority: 7
+    },
+    {
+        id: "performance",
+        title: "Performance Optimization",
+        price: 10000,
+        services: ["Website Development", "Web Application", "Mobile Application", "E-commerce", "Maintenance & Support"],
+        keywords: ["slow", "speed", "performance", "optimization", "loading", "existing", "rebuild", "traffic"],
+        priority: 8
+    },
+    {
+        id: "responsive",
+        title: "Responsive Design",
+        price: 10000,
+        services: ["Website Development", "Web Application", "E-commerce"],
+        keywords: ["mobile", "responsive", "tablet", "desktop", "device"],
+        priority: 7
+    },
+    {
+        id: "prototype",
+        title: "Interactive Prototype",
+        price: 12000,
+        services: ["UI / UX Design"],
+        keywords: ["prototype", "design", "user", "ux", "flow", "screen"],
+        priority: 9
+    },
+    {
+        id: "design-system",
+        title: "Design System",
+        price: 15000,
+        services: ["UI / UX Design", "Website Development", "Web Application", "Mobile Application"],
+        keywords: ["design", "screens", "pages", "brand", "consistent", "ui", "ux"],
+        priority: 8
+    },
+    {
+        id: "research",
+        title: "UX Research",
+        price: 18000,
+        services: ["UI / UX Design"],
+        keywords: ["user", "ux", "research", "usability", "experience"],
+        priority: 8
+    },
+    {
+        id: "testing",
+        title: "Usability Testing",
+        price: 15000,
+        services: ["UI / UX Design"],
+        keywords: ["user", "ux", "testing", "usability", "experience"],
+        priority: 8
+    },
+    {
+        id: "security-maintenance",
+        title: "Security Maintenance",
+        price: 12000,
+        services: ["Maintenance & Support"],
+        keywords: ["security", "maintenance", "support", "update", "existing", "live", "production"],
+        priority: 9
+    },
+    {
+        id: "seo-maintenance",
+        title: "SEO Maintenance",
+        price: 8000,
+        services: ["Maintenance & Support"],
+        keywords: ["seo", "search", "google", "traffic", "maintenance"],
+        priority: 7
+    }
+];
+
+/* =========================================================
+   RECOMMENDATION CONTEXT
+========================================================= */
+
+function getRecommendationContext() {
+    const selectedIds = getSelectedFeatureIds();
+    const description = currentQuote.description || "";
+
+    return {
+        service: currentQuote.service,
+        pages: currentQuote.pages,
+        complexity: currentQuote.complexity,
+        currentSolution: currentQuote.currentSolution,
+        designNeeded: currentQuote.designNeeded,
+        description,
+        selectedIds,
+        text: normalizeText(
+            currentQuote.service + " " +
+            currentQuote.pages + " " +
+            currentQuote.complexity + " " +
+            currentQuote.currentSolution + " " +
+            currentQuote.designNeeded + " " +
+            description
+        )
+    };
+}
+
+function getSelectedFeatureIds() {
+    return Array.from(document.querySelectorAll(".feature:checked"))
+        .map(feature => feature.id);
+}
+
+function normalizeText(value) {
+    return String(value || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9\s/&-]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+function scoreRecommendation(candidate, context) {
+    let score = candidate.priority || 0;
+
+    if (candidate.services.includes(context.service)) score += 35;
+
+    candidate.keywords.forEach(keyword => {
+        if (context.text.includes(normalizeText(keyword))) score += 10;
+    });
+
+    if (["11 – 20", "20+"].includes(context.pages)) {
+        if (["design-system", "database", "analytics", "security", "performance", "role-access"].includes(candidate.id)) {
+            score += 12;
+        }
+    }
+
+    if (context.complexity === "Advanced") {
+        if (["security", "monitoring", "performance", "database", "role-access", "api", "analytics"].includes(candidate.id)) {
+            score += 16;
+        }
+    }
+
+    if (["Existing Website", "Existing Application", "Rebuild / Redesign"].includes(context.currentSolution)) {
+        if (["performance", "security", "backup", "monitoring", "seo", "seo-maintenance"].includes(candidate.id)) {
+            score += 15;
+        }
+    }
+
+    if (context.designNeeded === "Yes — New Design") {
+        if (["responsive", "design-system", "prototype", "testing"].includes(candidate.id)) score += 13;
+    }
+
+    /* Payment Gateway -> useful post-payment/business features */
+    if (context.selectedIds.includes("f3")) {
+        if (["orders", "inventory", "shipping", "order-tracking", "analytics", "security", "notifications"].includes(candidate.id)) score += 24;
+    }
+
+    /* User Login -> useful account/security/business features */
+    if (context.selectedIds.includes("f1")) {
+        if (["security", "analytics", "notifications", "orders", "order-tracking"].includes(candidate.id)) score += 15;
+    }
+
+    /* Admin Panel -> useful management extensions */
+    if (context.selectedIds.includes("f2")) {
+        if (["analytics", "inventory", "orders", "role-access", "lead-management"].includes(candidate.id)) score += 20;
+    }
+
+    /* E-commerce context */
+    if (context.service === "E-commerce") {
+        if (["inventory", "orders", "shipping", "order-tracking", "analytics", "security", "notifications"].includes(candidate.id)) score += 20;
+    }
+
+    /* Mobile context */
+    if (context.service === "Mobile Application") {
+        if (["push-notifications", "api", "security", "analytics", "database"].includes(candidate.id)) score += 20;
+    }
+
+    /* Maintenance context */
+    if (context.service === "Maintenance & Support") {
+        if (["monitoring", "backup", "security-maintenance", "performance", "seo-maintenance"].includes(candidate.id)) score += 25;
+    }
+
+    /* Static/business website context */
+    if (
+        context.service === "Website Development" &&
+        /(static website|static site|business website|company website)/.test(context.text)
+    ) {
+        if (["cms", "seo", "analytics", "lead-management", "whatsapp", "responsive"].includes(candidate.id)) score += 28;
+    }
+
+    /* Booking/appointment context */
+    if (/(booking|appointment|reservation|doctor|clinic|salon|hotel|restaurant|travel)/.test(context.text)) {
+        if (candidate.id === "booking") score += 50;
+        if (["notifications", "analytics", "api"].includes(candidate.id)) score += 15;
+    }
+
+    /* Lead/sales context */
+    if (/(lead|leads|enquiry|inquiry|contact form|sales)/.test(context.text)) {
+        if (candidate.id === "lead-management") score += 40;
+        if (candidate.id === "whatsapp") score += 20;
+    }
+
+    return score;
+}
+
+function getContextualRecommendations() {
+    const context = getRecommendationContext();
+
+    return recommendationCatalog
+        .filter(candidate => {
+            /* Never recommend something already selected. */
+            if (context.selectedIds.includes(candidate.id)) return false;
+
+            /* Never recommend logical duplicates of selected features. */
+            if (candidate.excludeIf && candidate.excludeIf.some(id => context.selectedIds.includes(id))) return false;
+
+            return true;
+        })
+        .map(candidate => ({
+            ...candidate,
+            score: scoreRecommendation(candidate, context)
+        }))
+        .sort((a, b) => {
+            if (b.score !== a.score) return b.score - a.score;
+            return (b.priority || 0) - (a.priority || 0);
+        })
+        .slice(0, 5);
+}
+
+function buildRecommendationWhy(candidate, context) {
+    const selected = context.selectedIds;
+
+    const reasons = {
+        "database": selected.some(id => ["f1", "f2", "f3"].includes(id))
+            ? "Because your project already includes user, management or payment functionality, structured data storage can provide a reliable foundation for that information."
+            : "A database provides a structured foundation for storing business, customer and application data.",
+
+        "admin-dashboard": "An admin dashboard can give your team a central place to manage important business information without changing code directly.",
+
+        "lead-management": "If this project generates customer enquiries or sales opportunities, lead management can help organize and follow up with them.",
+
+        "analytics": selected.includes("f2")
+            ? "Since an admin panel is already selected, analytics can turn that management layer into useful business insights."
+            : "Analytics can help you understand traffic, customer activity and business performance after launch.",
+
+        "seo": "SEO can improve the technical foundation for search visibility and support long-term organic traffic.",
+
+        "database-ecommerce": "A structured product data layer can make a growing product catalogue easier to manage and extend.",
+
+        "inventory": "For an e-commerce project, inventory management helps keep product availability aligned with sales and stock levels.",
+
+        "orders": selected.includes("f3")
+            ? "Since online payment is already selected, order management gives the business a clear workflow for what happens after checkout."
+            : "Order management gives the business a structured way to manage purchases, order status and fulfillment.",
+
+        "shipping": "If customers purchase products online, shipping integration can reduce manual delivery processing and improve fulfillment.",
+
+        "customer-accounts": "Customer accounts can make repeat purchases, profile management and customer-specific experiences easier.",
+
+        "order-tracking": "After customers place an order, tracking can give them visibility into order and delivery progress.",
+
+        "notifications": "Notifications can keep customers informed about important events such as orders, status changes or account activity.",
+
+        "push-notifications": "For a mobile application, push notifications can communicate important updates directly to users.",
+
+        "api": "API integration can connect the application with external services such as maps, shipping, communication or other business systems.",
+
+        "security": selected.some(id => ["f1", "f3"].includes(id))
+            ? "Because your project involves user accounts or payments, stronger security can help protect customer data and sensitive actions."
+            : "Security protection helps reduce risks around application access and sensitive business information.",
+
+        "role-access": selected.includes("f2")
+            ? "Since an admin panel is already selected, role-based access can control what administrators, managers or staff members can do."
+            : "If different users or staff members need different permissions, role-based access can keep the application organized and secure.",
+
+        "booking": "Based on the project description, a booking system could let customers select available dates, times or services and manage reservations.",
+
+        "cms": "If your website content will change regularly, a CMS lets your team update pages and content without depending on developers.",
+
+        "whatsapp": "WhatsApp integration can give customers a quick communication channel for enquiries, support and sales conversations.",
+
+        "monitoring": "Application monitoring can help identify errors, downtime and production issues before they become larger problems.",
+
+        "backup": "Automated backups provide an additional layer of protection for important application and business data.",
+
+        "performance": "Performance optimization can improve loading speed, responsiveness and the overall experience as your project grows.",
+
+        "responsive": "Responsive design helps the experience work consistently across desktop, tablet and mobile screen sizes.",
+
+        "prototype": "An interactive prototype can help validate important screens and user flows before development begins.",
+
+        "design-system": "A design system helps maintain consistent components, spacing, typography and interactions across a larger project.",
+
+        "research": "UX research can reveal user needs and usability opportunities before the experience is finalized.",
+
+        "testing": "Usability testing can identify where real users may struggle before development changes become expensive.",
+
+        "security-maintenance": "For an existing product, ongoing security maintenance helps keep protections and dependencies up to date.",
+
+        "seo-maintenance": "SEO often benefits from ongoing review rather than being treated as a one-time setup."
+    };
+
+    return reasons[candidate.id] || "This feature can add useful functionality based on the project details you provided.";
+}
+
+function getRecommendationDescription(candidate) {
+    const descriptions = {
+        "database": "Allow your solution to store and manage structured business, customer and application data.",
+        "admin-dashboard": "Manage important business information and application activity from a central dashboard.",
+        "lead-management": "Capture, organize and manage customer enquiries generated from your solution.",
+        "analytics": "Track visitors, activity, traffic sources and important business interactions.",
+        "seo": "Create a stronger technical SEO foundation for search visibility.",
+        "database-ecommerce": "Create a structured product data layer for a growing catalogue.",
+        "inventory": "Manage product stock, availability and inventory movement.",
+        "orders": "Manage customer orders and order status from checkout through completion.",
+        "shipping": "Connect shipping or courier services to simplify delivery workflows.",
+        "customer-accounts": "Allow customers to manage account information and their shopping activity.",
+        "order-tracking": "Give customers visibility into their order and delivery progress.",
+        "notifications": "Send useful alerts for important customer and business events.",
+        "push-notifications": "Send real-time updates directly to users of your mobile application.",
+        "api": "Connect external platforms and services with your application.",
+        "security": "Add stronger protection around application access and sensitive information.",
+        "role-access": "Control what different users, staff members and administrators can access.",
+        "booking": "Allow customers to book appointments, services, dates or time slots.",
+        "cms": "Allow your team to update website content without depending on developers.",
+        "whatsapp": "Connect customers directly with your business through WhatsApp.",
+        "monitoring": "Monitor application health, errors, uptime and production activity.",
+        "backup": "Protect important application and business data with automated backups.",
+        "performance": "Improve application speed, loading time and overall responsiveness.",
+        "responsive": "Design the experience to work consistently across desktop, tablet and mobile.",
+        "prototype": "Create a clickable experience to validate important user journeys before development.",
+        "design-system": "Create reusable design rules and components for a consistent product experience.",
+        "research": "Study user needs and business goals before finalizing the experience.",
+        "testing": "Test important user flows before development to identify usability issues.",
+        "security-maintenance": "Regularly review and maintain important security areas.",
+        "seo-maintenance": "Continue improving technical SEO areas over time."
+    };
+
+    return descriptions[candidate.id] || "An additional feature that may add value to your project.";
+}
+
+/* =========================================================
+   RECOMMENDATIONS RENDERING
+========================================================= */
+
+function renderRecommendations() {
+    const list = document.getElementById("recommendationList");
+    const recommendations = getContextualRecommendations();
+    const context = getRecommendationContext();
+
+    /* Preserve accepted recommendations that are still valid. */
+    const availableIds = recommendations.map(item => item.id);
+    selectedRecommendations = selectedRecommendations.filter(id => availableIds.includes(id));
+
+    list.innerHTML = "";
+
+    if (!recommendations.length) {
+        list.innerHTML = `
+            <div class="recommendation-card">
+                <p>No additional recommendations are required for the current selection.</p>
+            </div>
+        `;
+        calculateEstimate();
+        return;
+    }
+
+    recommendations.forEach((recommendation, index) => {
+        const card = document.createElement("div");
+        card.className = "recommendation-card";
+        card.dataset.id = recommendation.id;
+
+        const isAdded = selectedRecommendations.includes(recommendation.id);
+
+        card.innerHTML = `
+            <div class="recommendation-top">
+                <div>
+                    <div class="recommendation-number">
+                        ${String(index + 1).padStart(2, "0")}
+                    </div>
+                    <h4>${escapeHTML(recommendation.title)}</h4>
+                </div>
+                <div class="recommended-label">Recommended</div>
+            </div>
+
+            <p>${escapeHTML(getRecommendationDescription(recommendation))}</p>
+
+            <div class="why-box">
+                <strong>Why we recommend it</strong>
+                ${escapeHTML(buildRecommendationWhy(recommendation, context))}
+            </div>
+
+            <div class="recommendation-bottom">
+                <div class="recommendation-price">
+                    Additional Cost:
+                    <span>+${formatCurrency(recommendation.price)}</span>
+                </div>
+
+                <button
+                    type="button"
+                    class="btn btn-secondary btn-small ${isAdded ? "added" : ""}"
+                    onclick="toggleRecommendation('${recommendation.id}')"
+                >
+                    ${isAdded ? "✓ ADDED" : "ADD TO QUOTE +"}
+                </button>
+            </div>
+        `;
+
+        list.appendChild(card);
+    });
+
+    calculateEstimate();
+}
+
+/* =========================================================
+   ADD / REMOVE RECOMMENDATION
+========================================================= */
+
+function toggleRecommendation(id) {
+    const recommendation = recommendationCatalog.find(item => item.id === id);
+    if (!recommendation) return;
+
+    const index = selectedRecommendations.indexOf(id);
+
+    if (index === -1) {
+        selectedRecommendations.push(id);
+        showToast(recommendation.title + " added to your quotation.");
+    } else {
+        selectedRecommendations.splice(index, 1);
+        showToast(recommendation.title + " removed from your quotation.");
+    }
+
+    calculateEstimate();
+    renderRecommendations();
+}
+
+/* =========================================================
+   GO TO ESTIMATE
+========================================================= */
+
+function goToEstimate() {
+    const name = document.getElementById("quoteName").value.trim();
+    const email = document.getElementById("quoteEmail").value.trim();
+
+    if (!name) {
+        showToast("Please enter your name.");
+        return;
+    }
+
+    if (!email) {
+        showToast("Please enter your email.");
+        return;
+    }
+
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+        showToast("Please enter a valid email address.");
+        return;
+    }
+
+    if (!document.getElementById("quoteTimeline").value) {
+        showToast("Please select your expected timeline.");
+        return;
+    }
+
+    if (!document.getElementById("quoteBudget").value) {
+        showToast("Please select your budget.");
+        return;
+    }
+
+    calculateEstimate();
+    renderRecommendations();
+
+    preservePagePosition(() => {
+        quoteStep = 5;
+        showQuoteStep(5);
+    });
+}
+
+/* =========================================================
+   GO TO FINAL REVIEW
+========================================================= */
+
+function goToQuoteReview() {
+    calculateEstimate();
+    populateReview();
+
+    preservePagePosition(() => {
+        quoteStep = 6;
+        showQuoteStep(6);
+    });
+}
+
+/* =========================================================
+   FINAL PREVIEW
+========================================================= */
+
+function populateReview() {
+    document.getElementById("reviewName").textContent = currentQuote.name || "—";
+    document.getElementById("reviewEmail").textContent = currentQuote.email || "—";
+    document.getElementById("reviewCompany").textContent = currentQuote.company || "—";
+    document.getElementById("reviewPhone").textContent = currentQuote.phone || "—";
+    document.getElementById("reviewService").textContent = currentQuote.service || "—";
+    document.getElementById("reviewScope").textContent = currentQuote.pages || "—";
+    document.getElementById("reviewComplexity").textContent = currentQuote.complexity || "—";
+    document.getElementById("reviewTimeline").textContent = currentQuote.timeline || "—";
+    document.getElementById("reviewBudget").textContent = currentQuote.budget || "—";
+    document.getElementById("reviewDesign").textContent = currentQuote.designNeeded || "—";
+    document.getElementById("reviewDescription").textContent = currentQuote.description || "—";
+
+    const featureContainer = document.getElementById("reviewFeatures");
+    featureContainer.innerHTML = "";
+
+    if (currentQuote.features.length) {
+        currentQuote.features.forEach(feature => {
+            const tag = document.createElement("span");
+            tag.className = "tag";
+            tag.textContent = feature;
+            featureContainer.appendChild(tag);
+        });
+    } else {
+        featureContainer.innerHTML = `<span class="tag">No additional features</span>`;
+    }
+
+    const recommendationContainer = document.getElementById("reviewRecommendations");
+    recommendationContainer.innerHTML = "";
+
+    if (selectedRecommendations.length) {
+        selectedRecommendations.forEach(id => {
+            const recommendation = recommendationCatalog.find(item => item.id === id);
+            if (!recommendation) return;
+
+            const tag = document.createElement("span");
+            tag.className = "tag";
+            tag.textContent = recommendation.title + " +" + formatCurrency(recommendation.price);
+            recommendationContainer.appendChild(tag);
+        });
+    } else {
+        recommendationContainer.innerHTML = `<span class="tag">No recommendations added</span>`;
+    }
+
+    const range = getEstimateRange(currentQuote.finalTotal);
+    currentQuote.estimateMin = range.min;
+    currentQuote.estimateMax = range.max;
+
+    document.getElementById("reviewEstimate").textContent =
+        formatRange(range.min, range.max);
+}
+
+/* =========================================================
+   SUBMIT QUOTATION
+   This creates the complete payload for the future backend.
+========================================================= */
+
+function submitQuotation() {
+    calculateEstimate();
+
+    const quoteId = generateQuoteId();
+
+    const acceptedRecommendations = selectedRecommendations
+        .map(id => recommendationCatalog.find(item => item.id === id))
+        .filter(Boolean);
+
+    const payload = {
+        quoteId,
+        date: new Date().toISOString(),
+        client: {
+            name: currentQuote.name,
+            email: currentQuote.email,
+            company: currentQuote.company,
+            phone: currentQuote.phone
+        },
+        service: currentQuote.service,
+        scope: currentQuote.pages,
+        complexity: currentQuote.complexity,
+        currentSolution: currentQuote.currentSolution,
+        designNeeded: currentQuote.designNeeded,
+        projectDescription: currentQuote.description,
+        selectedFeatures: currentQuote.features,
+        recommendedFeatures: getContextualRecommendations().map(item => item.title),
+        acceptedRecommendations: acceptedRecommendations.map(item => item.title),
+        originalEstimate: currentQuote.originalTotal,
+        additionalRecommendationCost: currentQuote.recommendationTotal,
+        finalEstimate: currentQuote.finalTotal,
+        estimatedRange: formatRange(currentQuote.estimateMin, currentQuote.estimateMax),
+        timeline: currentQuote.timeline,
+        budget: currentQuote.budget
+    };
+
+    document.getElementById("successQuoteId").textContent = quoteId;
+
+    document.querySelectorAll("[data-quote-step]").forEach(element => {
+        element.classList.remove("active");
+    });
+
+    document.getElementById("quoteSuccess").classList.add("active");
+
+    /*
+        REAL BACKEND CONNECTION GOES HERE:
+
+        fetch("/api/quotation", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+
+        Backend responsibilities:
+        1. Save quotation into Excel.
+        2. Send quotation email to company.
+        3. Send confirmation email to client.
+        4. Return/store the Quote ID.
+    */
+
+    console.log("Quotation data ready for Excel/email integration:", payload);
+}
+
+/* =========================================================
+   QUOTE ID
+========================================================= */
+
+function generateQuoteId() {
+    const random = Math.floor(10000 + Math.random() * 90000);
+    return `QT-${new Date().getFullYear()}-${random}`;
+}
+
+/* =========================================================
+   CURRENCY
+========================================================= */
+
+function formatCurrency(amount) {
+    return "₹" + Number(amount || 0).toLocaleString("en-IN");
+}
+
+/* =========================================================
+   ESTIMATE RANGE
+========================================================= */
+
+function getEstimateRange(total) {
+    const rounded = Math.round(total / 5000) * 5000;
+    const min = Math.max(0, rounded - 5000);
+    const max = rounded + 10000;
+
+    return { min, max };
+}
+
+function formatRange(min, max) {
+    return formatCurrency(min) + " – " + formatCurrency(max);
+}
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(value) {
+    return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+let toastTimer;
+
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2500);
+}
+
+/* =========================================================
+   LIVE FEATURE / DETAIL CHANGES
+========================================================= */
+
+document.querySelectorAll(".feature").forEach(feature => {
+    feature.addEventListener("change", () => {
+        if (quoteStep === 5) {
+            calculateEstimate();
+            renderRecommendations();
+        }
+    });
+});
+
+[
+    "pages",
+    "complexity",
+    "currentSolution",
+    "designNeeded",
+    "projectDescription",
+    "quoteTimeline",
+    "quoteBudget"
+].forEach(id => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    element.addEventListener("change", () => {
+        if (quoteStep === 5) {
+            calculateEstimate();
+            renderRecommendations();
+        }
+    });
+});
+
+document.getElementById("projectDescription").addEventListener("input", () => {
+    if (quoteStep === 5) {
+        calculateEstimate();
+        renderRecommendations();
+    }
+});
+
+/* =========================================================
+   INITIALIZATION
+========================================================= */
+
+showContactStep(1);
+showQuoteStep(1);
+
+</script>
+
+</body>
+</html>
